@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+    <data>
+        <variable
+            name="searchViewModel"
+            type="com.example.dummyapibrowser.viewModel.SearchViewModel" />
+    </data>
+<androidx.constraintlayout.widget.ConstraintLayout     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SearchActivity">
+
+    <TextView
+        android:id="@+id/tv_heading2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="@string/activity2"
+        android:textSize="30sp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/table2"
+        />
+
+    <TableLayout
+        android:id="@+id/table2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tv_heading2"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:paddingTop="10dp"
+        android:padding="20dp"
+        >
+
+        <TableRow
+            android:background="@drawable/border"
+            >
+            <EditText
+                android:layout_width="330dp"
+                android:paddingLeft="10dp"
+                android:text="@{searchViewModel.searchedEmployee}"
+                android:layout_height="match_parent"
+
+            />
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:padding="5dp"
+                android:src="@drawable/ic_baseline_search"
+                android:onClick="@{() -> searchViewModel.getAllData()}"
+
+                />
+        </TableRow>
+
+
+    </TableLayout>
+
+    <FrameLayout
+        android:id="@+id/fragment_holder"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toBottomOf="@id/table2"
+        app:layout_constraintBottom_toTopOf="@id/employee_recycler_view"
+
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/employee_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:layout_margin="5dp"
+        app:layout_constraintTop_toBottomOf="@id/table2"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

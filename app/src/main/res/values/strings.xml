@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">DummyApi Browser</string>
+    <string name="activity2">Search</string>
+    <string name="msg_please_wait">Please wait...</string>
+    <string name="msg_give_it_another_try">Give it another try</string>
+    <string name="action_retry">Retry</string>
+    <string name="msg_no_items_to_display">No items to display</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="row_1">My Employees</string>
+    <string name="row_2">New Search</string>
+    <string name="row_3">Settings</string>
+</resources>
